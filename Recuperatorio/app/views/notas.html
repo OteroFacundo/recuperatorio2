@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block header %}
+    {{ include('partials/nav.html') }}
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+    <meta name="keywords" content="PAW,2018,Templates,PHP">
+<script type="text/javascript" src="/public/javaScript/javaScript.js">
+   
+    </script>
+  
+    
+    
+
+
+
+{% endblock %}
+
+{% block main %}
+<table id="miTabla">
+        <th onclick="sortTable(0,'miTabla')">Nº alumno</th>
+        <th onclick="sortTable(1,'miTabla')">Nombre</th>
+        <th onclick="sortTable(2,'miTabla')">email</th>
+        <th onclick="sortTable(3,'miTabla')">NOTA 1</th>
+        <th onclick="sortTable(4,'miTabla')">NOTA 2</th>
+        <th onclick="sortTable(5,'miTabla')">NOTA 3</th>
+        
+      
+     {% for dato in misDatos %}
+        
+        <tr>
+             <td>{{ dato.id }}</td>
+            <td>{{ dato.nombre }}</td>
+            <td>{{ dato.email}}</td>
+            <td>{{ dato.primerNota}}</td>
+            <td>{{ dato.segundaNota}}</td>
+            <td>{{ dato.tercerNota}}</td>
+            
+        </tr>
+        {% endfor %}
+        
+    </table>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
